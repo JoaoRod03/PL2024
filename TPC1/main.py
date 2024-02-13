@@ -29,7 +29,6 @@ for key, value in stats.items():
 min_age = 100
 for linha in data:
     age = int(linha[5])
-    agee = int(linha[5])
     if age < min_age:
         min_age = age
 

@@ -1,9 +1,7 @@
-csv = "./emd.csv"
-
 # Leitura do csv
 
 data = []
-with open(csv, 'r') as f:
+with open("./emd.csv", 'r') as f:
     lines = f.readlines()[1:] 
     for line in lines:
         data.append(line.strip().split(','))

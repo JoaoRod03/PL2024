@@ -1,40 +1,31 @@
 import re
 
-def markdown_to_html(markdown):
+with open("input.md", "r", encoding="utf-8") as md:
+    text = md.read()
+
     
-    # Cabeçalhos
-    markdown = re.sub(r'^(#)\s+(.+)$', r'<h1>\2</h1>', markdown, flags=re.MULTILINE)
-    markdown = re.sub(r'^(##)\s+(.+)$', r'<h2>\2</h2>', markdown, flags=re.MULTILINE)
-    markdown = re.sub(r'^(###)\s+(.+)$', r'<h3>\2</h3>', markdown, flags=re.MULTILINE)
+# Cabeçalhos
+text = re.sub(r'^(#)\s+(.+)$', r'<h1>\2</h1>', text, flags=re.MULTILINE)
+text = re.sub(r'^(##)\s+(.+)$', r'<h2>\2</h2>', text, flags=re.MULTILINE)
+text = re.sub(r'^(###)\s+(.+)$', r'<h3>\2</h3>', text, flags=re.MULTILINE)
     
-    # Bold
-    markdown = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', markdown)
-    markdown = re.sub(r'\_\_(.+?)\_\_', r'<b>\1</b>', markdown)
+# Bold
+text = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text)
+text = re.sub(r'\_\_(.+?)\_\_', r'<b>\1</b>', text)
     
-    # Itálico
-    markdown = re.sub(r'\*(.+?)\*', r'<i>\1</i>', markdown)
+# Itálico
+text = re.sub(r'\*(.+?)\*', r'<i>\1</i>', text)
     
-    # Lista numerada
-    markdown = re.sub(r'^(?=\d+\. )(.+)$', r'<li>\1</li>', markdown, flags=re.MULTILINE)
-    markdown = re.sub(r'((<li>.+\n)+)', r'<ol>\1</ol>', markdown)
+# Lista numerada
+text = re.sub(r'^(?=\d+\. )(.+)$', r'<li>\1</li>', text, flags=re.MULTILINE)
+text = re.sub(r'((<li>.+\n)+)', r'<ol>\1</ol>', text)
     
-    # Imagem
-    markdown = re.sub(r'!\[(.+?)\]\((.+?)\)', r'<img src="\2" alt="\1"/>', markdown)
+# Imagem
+text = re.sub(r'!\[(.+?)\]\((.+?)\)', r'<img src="\2" alt="\1"/>', text)
 
-    # Link
-    markdown = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', markdown)
+# Link
+text = re.sub(r'\[(.+?)\]\((.+?)\)', r'<a href="\2">\1</a>', text)
     
-    return markdown
-
-
-markdown_text = ""
-
-with open("input.md", "r", encoding="utf-8") as md_file:
-    markdown_text = md_file.read()
-
-html_output = markdown_to_html(markdown_text)
-
-
 with open("index.html", "w") as f:
-    f.write(html_output)
+    f.write(text)
 

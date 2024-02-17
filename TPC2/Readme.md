@@ -8,7 +8,8 @@
 ## Resumo
 ```
 
-O objetivo deste trabalho é criar um conversor de MarkDown para HTML usando Python. O script utilizará como input o ficheiro "input.md"
+O objetivo deste trabalho é criar um conversor de MarkDown para HTML usando Python. 
+O script utilizará como input o ficheiro "input.md".
 
 Este conversor deverá cumprir os seguintes pares input/output:
 - Cabeçalhos: linhas iniciadas por "# texto", ou "## texto" ou "### texto"

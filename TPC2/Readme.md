@@ -6,6 +6,7 @@
 - João Pedro da Rocha Rodrigues
 
 ## Resumo
+```
 
 O objetivo deste trabalho é criar um conversor de MarkDown para HTML usando Python.
 
@@ -36,3 +37,5 @@ Este conversor deverá cumprir os seguintes pares input/output:
 - Imagem: ![texto alternativo](path para a imagem)
     - In: Como se vê na imagem seguinte: ![imagem dum coelho](http://www.coellho.com) ...
     - Out: Como se vê na imagem seguinte: <img src="http://www.coellho.com" alt="imagem dum coelho"/> ...
+
+```

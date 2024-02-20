@@ -14,6 +14,7 @@ text = re.sub(r'\_\_(.+?)\_\_', r'<b>\1</b>', text)
     
 # Itálico
 text = re.sub(r'\*(.+?)\*', r'<i>\1</i>', text)
+text = re.sub(r'\_(.+?)\_', r'<i>\1</i>', text)
     
 # Lista numerada
 text = re.sub(r'^(?=\d+\. )(.+)$', r'<li>\1</li>', text, flags = re.MULTILINE)

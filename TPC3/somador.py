@@ -8,7 +8,7 @@ def sum(file_path):
     with open(file_path, 'r') as f:
         for line in f:
             parts = re.split(r' ', line, flags=re.IGNORECASE)
-            for i, word in enumerate(parts):
+            for word in parts:
                 word = word.strip()
                 if word.lower() == "on":
                     on_off = True

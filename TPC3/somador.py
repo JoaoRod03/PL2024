@@ -4,7 +4,7 @@ import sys
 
 def sum(file_path):
     sum = 0
-    on_off = False
+    on_off = True   
     with open(file_path, 'r') as f:
         for line in f:
             parts = re.split(r' ', line, flags=re.IGNORECASE)
@@ -18,7 +18,7 @@ def sum(file_path):
                     print("Somatório atual: " + str(sum))
                 else:
                     if on_off:
-                        numeros = re.findall(r'\d+', word)
+                        numeros = re.findall(r'(\+|- )\d+', word)
                         for numero in numeros:
                             sum += int(numero)
     print("Somatório final: " + str(sum))

@@ -1,4 +1,4 @@
-# TPC4: Somador em python
+# TPC4: Analisador léxico em python
 ## 2024-03-01
 
 ## Autor:
